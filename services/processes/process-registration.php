@@ -16,8 +16,7 @@
     $firstName = "";
     $lastName = "";
     $middleName = "";
-    //
-    // if(isset($_POST['register'])){
+
 
     $errors = array();
 
@@ -51,6 +50,7 @@
         ('$userName','$email','$password','$firstName','$lastName','$middleName')";
 
         $result = mysqli_query($conn,$sql);
+        $_SESSION['sessionID'] = 1;
         $_SESSION['username'] = $userName;
         $_SESSION['success'] = "You are now logged in";
         header('location: Landing-page.php');
@@ -58,42 +58,6 @@
 
 
     }
-
-    //
-    //       // CHECK IF EMPTY
-    //       if (empty($username)){
-    //         array_push($errors , "Username is required");
-    //       }
-    //
-    //       if (empty($email)){
-    //         array_push($errors , "Email is required");
-    //       }
-    //
-    //       if (empty($password)){
-    //         array_push($errors , "Password is requred");
-    //       }
-    //
-    //       // CHECK IF PASSWORD AND CONFIRM PASSWORD NOT SAME
-    //       if (empty($password != $confirmPassword)){
-    //         array_push($errors , "Passwords do not Match");
-    //       }
-    //
-    //       if (empty($firstName)){
-    //         array_push($errors , "Firstname is required");
-    //       }
-    //
-    //       if (empty($lastName)){
-    //         array_push($errors , "Lastname is required");
-    //       }
-    //
-    //       if (empty($middleName)){
-    //         array_push($errors , "Middlename is required");
-    //       }
-    //
-    //
-    //       //If there ar eno errors
-    //       if($count($errors== 0)){
-            //Save to database
 
 
 

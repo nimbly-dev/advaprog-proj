@@ -33,6 +33,7 @@
       $sql = "Select * from useraccount WHERE username = '$userName' AND password='$password'";
       $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result) == 1){
+          $_SESSION['sessionID'] = 1;
           $_SESSION['username'] = $userName;
           $_SESSION['Success'] = "You are now logged In";
           header ('location: Landing-page.php');
