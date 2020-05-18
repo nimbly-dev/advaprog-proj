@@ -1,6 +1,6 @@
 <?php
 
-	 
+
 
  ?>
 <!DOCTYPE html>
@@ -26,56 +26,18 @@
        <span class="navbar-toggler-icon"></span>
       </button>
 
-    <button class="btn btn-light" data-toggle="modal" data-target="#Login">
-    <span class="button_text">Login</span>
+		<a href="login.php">
+		<button class="btn btn-light" data-toggle="modal" data-target="#Login">
+    	<span class="button_text">Login</span>
     </button>
+		</a>
 
     <a href="Register.php">
 		<button class="btn btn-light">
 	    <span class="button_text">Register</span>
     </button>
 		</a>
-    <!-- MODAL Login -->
-  <form action="process-login.php" method="POST">
-	<div id="Login" class="modal fade" >
-				<div class="modal-dialog">
-					<div class="modal-content">
 
-						<div class="modal-header">
-							<!-- Modal content header -->
-							Login
-						</div>
-
-
-						<div class="modal-body">
-						<!-- Model cotent Body -->
-							<div>
-								<label for="username">Username:</label>
-								<input type="text" name="username" required="" placeholder="username"
-								id="username"></input>
-							</div>
-							<div>
-								<label for="password">Password:</label>
-								<input type="text" name="password" required="" placeholder="password"
-								id="password"></input>
-							</div>
-
-						</div>
-
-						<div class="modal-footer">
-						<!-- Modal content footer -->
-							<div>
-
-								<input type="submit" id="btn-login" value="login" />
-
-
-							</div>
-						</div>
-
-					</div>
-				</div>
-      </form>
-	</div>
 
 
 	</nav>
