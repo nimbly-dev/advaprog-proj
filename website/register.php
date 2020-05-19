@@ -26,7 +26,7 @@
 							</div>
               <!-- ERROR HANDLER HERE -->
               <!--  -->
-              <?php  include ('../services/error_handlers/errors_registration.php') ?>
+              <?php  include ('../services/handlers/credential_validators.php') ?>
 							<div class="input-group">
 								<label>Username:</label>
 								<input type="text" name="username" placeholder="Enter username " id="username"></input>

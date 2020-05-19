@@ -25,7 +25,7 @@
 							<div class="header">
 								<h2>LOGIN</h2>
 							</div>
-              <?php  include ('../services/error_handlers/errors_registration.php') ?>
+              <?php  include ('../services/handlers/credential_validators.php') ?>
 							<div class="input-group">
 								<label>Username:</label>
 								<input type="text" name="username" placeholder="Enter username " id="username"></input>

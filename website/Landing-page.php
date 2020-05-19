@@ -1,9 +1,10 @@
 <?php
-
+	// include ('../model/Beans/ProductBean.php');
+	// include ('../model/Beans/ProductListing.php');
 	session_start();
-	//$_SESSION['sessionID'] == 0;
+	$_SESSION['sessionID'] == 0;
 
-	//If sessionID is 1 then user has logged-in
+
 	if(@$_SESSION['sessionID'] == 1){
 		require_once("../view-comp/header-login.php");
 	}
