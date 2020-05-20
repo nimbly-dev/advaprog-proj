@@ -5,7 +5,7 @@
 
  ?>
 
-
+ <!-- START -->
  <?php
 
 //SQL STATEMENT FOR SELECTING ALL INPUTS ON "product_list" table
@@ -18,11 +18,22 @@ $result = $conn->query($sql);
   // output data of each row
   while($row = $result->fetch_assoc()) {
     // Here is where a template is created for every item
-    echo "Product Name :{$row['productName']}  <br> ".
+   ?>
+   <br><br>
+      <!-- echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>'; -->
+   <div class="card col-4 mx-5">
+     <div class="card-body">
+        <?php echo "<img src='{$row['imgPath']}'>"; ?>
+       <div class="product-title"> <?php  echo " {$row['productName']}  <br> "; ?> </div>
+     <?php echo
        "Product Price : {$row['productPrice']} <br> ".
        "Product Description : {$row['productDescription']} <br> ".
-       "--------------------------------<br>";
+       "";
+      ?>
+    </div>
+   </div>
+   <?php
   }
  }
-
+ // END
  ?>
