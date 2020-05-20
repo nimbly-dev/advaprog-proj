@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 
-
+    // Calls Navbar processes
   include ('../services/processes/process-navbar.php');
 
  ?>

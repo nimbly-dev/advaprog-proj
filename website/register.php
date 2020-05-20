@@ -25,7 +25,6 @@
 								<h2>Register</h2>
 							</div>
               <!-- ERROR HANDLER HERE -->
-              <!--  -->
               <?php  include ('../services/handlers/credential_validators.php') ?>
 							<div class="input-group">
 								<label>Username:</label>

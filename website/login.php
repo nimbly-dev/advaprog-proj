@@ -20,11 +20,11 @@
 	<div class="container">
 
             <!-- INCLUDE THE ERROR PHP CLASS -->
-
 						<form method="POST" action="login.php">
 							<div class="header">
 								<h2>LOGIN</h2>
 							</div>
+              <!-- Calls the crendital_validators here -->
               <?php  include ('../services/handlers/credential_validators.php') ?>
 							<div class="input-group">
 								<label>Username:</label>

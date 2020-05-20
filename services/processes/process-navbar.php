@@ -1,7 +1,8 @@
 <?php
 
-  //$_SESSION['sessionID'];
+  // note: NOT WORKING
 
+  //Function to get username after log-in
   function getUserName(){
     if($_SESSION('sessionID') == 1){
       echo "".$_SESSION['username']."";
@@ -12,8 +13,9 @@
   }
 
 
+  //Function for logout
   function logout(){
-    //session_start();
+    // Unsert and remove session variables that was used
     unset($_SESSION['sessionID']);
     unset($_SESSION["username"]);
     session_destroy();
@@ -21,7 +23,7 @@
 
 
 
-  //LOGOUT BUTTON ACTION
+  //Function to check if logout button was clicked
   if(isset($_POST['logout'])){;
      logout();
   }
