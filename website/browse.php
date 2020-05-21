@@ -15,14 +15,18 @@
 	}
 
  ?>
- 
+
 <!-- CONTENT HERE -->
+<div class="container">
+	<div class="card mt-3">
+		<div class="card-body">
 
+			<!-- Product Printing Here -->
+			<?php include('../services/processes/process-printing-products.php'); ?>
 
-	<!-- Product Printing Here -->
-	<?php include('../services/processes/process-printing-products.php'); ?>
-
-
+	  </div>
+	</div>
+</div>
 
 </body>
 </html>
