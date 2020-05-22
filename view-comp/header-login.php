@@ -53,6 +53,13 @@
       </a>
     </div>
 
+    <div>
+      <a href="search.php">
+      <button class="btn btn-light">
+        <span class="button_text">Search</span>
+      </button>
+      </a>
+    </div>
 
     <div>
       <?php
@@ -70,7 +77,6 @@
     </div>
 
     <div>
-
 
       	<form method="POST" action="Landing-page.php">
           <input type="submit" value="Logout" class="btn btn-light" name="logout"></input>

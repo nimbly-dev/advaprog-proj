@@ -13,10 +13,6 @@ $sql = "SELECT * FROM product_list";
 // puts it on the result var and connects the sql query to the db
 $result = $conn->query($sql);
 
-// DETERMINS max row
-$maxRow = 2;
-$ctr = 0;
-
 //Iterates until there are no more product inputs to be printed
  if ($result->num_rows > 0) {
   // output data of each row
@@ -40,7 +36,6 @@ $ctr = 0;
    </div>
 
    <!-- Increment counter to 1 -->
-   <?php ++$ctr; ?>
 
    <?php
   }

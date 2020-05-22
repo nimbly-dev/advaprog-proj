@@ -45,11 +45,18 @@
   		</a>
     </div>
 
-
     <div>
       <a href="browse.php">
       <button class="btn btn-light">
         <span class="button_text">Browse</span>
+      </button>
+      </a>
+    </div>
+
+    <div>
+      <a href="search.php">
+      <button class="btn btn-light">
+        <span class="button_text">Search</span>
       </button>
       </a>
     </div>
