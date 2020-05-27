@@ -64,7 +64,7 @@
       <!-- CHECKING -->
        <!-- JUST FOR CHECKING -->
        <button class="btn btn-light">
-         <span class="button_text">USER-LOGGED</span>
+         <span class="button_text"><?php echo $_SESSION['username'] ?></span>
        </button>
     </div>
 

@@ -29,8 +29,14 @@ $result = $conn->query($sql);
        <div class="product-title"> <?php  echo " {$row['productName']}  <br> "; ?> </div>
          <?php echo
            "Product Price : {$row['productPrice']} <br> ".
-           "Product Description : {$row['productDescription']} <br> ".
-           "<button type='button' class='btn btn-success buy'>Buy</button> ";
+           "Product Description : {$row['productDescription']} <br> "."";
+
+           if(@$_SESSION[@'sessionID'] == 1){
+             echo " <button type='button' class='btn btn-success buy'>Buy</button> ";
+           }
+           else {
+              echo "<button type='button' class='btn btn-success buy' disabled>Buy</button> ";
+           }
           ?>
           <?php
 
