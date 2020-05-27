@@ -1,7 +1,7 @@
 <?php
 
-session_start();
 
+     session_start();
 
 
 //If sessionID is 1 then user has logged-in

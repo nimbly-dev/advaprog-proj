@@ -1,8 +1,8 @@
 <?php
 // include ('../model/Beans/ProductBean.php');
 // include ('../model/Beans/ProductListing.php');
-	session_start();
 
+		   session_start();
 
 
 	//If sessionID is 1 then user has logged-in

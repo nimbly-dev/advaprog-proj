@@ -2,7 +2,6 @@
 <?php
   // Calls Navbar processes
   include ('../services/processes/process-navbar.php');
-
  ?>
 <html>
 <head>
@@ -27,23 +26,23 @@
       </button>
 
 
-    <div>
+    <!-- <div> -->
       <!-- LINK TO LOGIN PAGE -->
-  		<a href="login.php">
+  		<!-- <a href="login.php">
     		<button class="btn btn-light">
         	<span class="button_text">Login</span>
         </button>
   		</a>
-    </div>
+    </div> -->
 
-    <div>
+    <!-- <div> -->
       <!-- LINK TO REGISTER PAGE -->
-      <a href="Register.php">
+      <!-- <a href="Register.php">
   		<button class="btn btn-light">
   	    <span class="button_text">Register</span>
       </button>
   		</a>
-    </div>
+    </div> -->
 
     <div>
       <a href="browse.php">
@@ -62,14 +61,7 @@
     </div>
 
     <div>
-      <?php
-
-        // getUserName();
-        if($_SESSION['sessionID'] == 1){
-          echo "readed";
-        }
-
-       ?>
+      <!-- CHECKING -->
        <!-- JUST FOR CHECKING -->
        <button class="btn btn-light">
          <span class="button_text">USER-LOGGED</span>
@@ -77,10 +69,9 @@
     </div>
 
     <div>
-
-      	<form method="POST" action="Landing-page.php">
-          <input type="submit" value="Logout" class="btn btn-light" name="logout"></input>
-        </form>
+      <form method="POST" action="../services/processes/process-logout.php">
+          <input type="submit" value="logout" class="btn btn-light" name="logout"></input>
+      </form>
     </div>
 
 	</nav>

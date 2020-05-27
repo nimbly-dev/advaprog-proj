@@ -16,16 +16,16 @@
   //Function for logout
   function logout(){
     // Unsert and remove session variables that was used
-    unset($_SESSION['sessionID']);
-    unset($_SESSION["username"]);
+    // unset($_SESSION['sessionID']);
+    // unset($_SESSION["username"]);
     session_destroy();
+
   }
 
 
-
-  //Function to check if logout button was clicked
-  if(isset($_POST['logout'])){;
+  if(isset($_POST['logout'])){
      logout();
+     header ('location: Landing-page.php');
   }
 
 ?>

@@ -5,8 +5,7 @@
 
  ?>
 <?php
-
-
+     session_start();
   //Initialize variables
   $userName = "";
   $password = "";
@@ -16,6 +15,8 @@
 
   // Error arrays
   $errors = array();
+
+  $_SESSION['sessionID'] = 1;
 
   // If btn-login is clicked
   if(isset($_POST['login'])){
@@ -45,9 +46,10 @@
           $_SESSION['sessionID'] = 1;
           // Calls the username value on table to be used by the website for printing
           $_SESSION['username'] = $userName;
-          $_SESSION['Success'] = "You are now logged In";
           // Redirect to Landing-page
           header ('location: Landing-page.php');
+          // echo $userName;
+
         }else{
           // No username and password matched, pushed to errors array
           array_push($errors, "Wrong credentials");

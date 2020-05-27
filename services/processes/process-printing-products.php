@@ -30,8 +30,13 @@ $result = $conn->query($sql);
          <?php echo
            "Product Price : {$row['productPrice']} <br> ".
            "Product Description : {$row['productDescription']} <br> ".
-           "";
+           "<button type='button' class='btn btn-success buy'>Buy</button> ";
           ?>
+          <?php
+
+
+
+           ?>
     </div>
    </div>
 
