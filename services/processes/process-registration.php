@@ -60,9 +60,9 @@
         $_SESSION['sessionID'] = 1;
         // Calls the username value on table to be used by the website for printing
         $_SESSION['username'] = $userName;
-        $_SESSION['success'] = "You are now logged in";
+
         // Redirect to Landing-page
-        header('location: Landing-page.php');
+        header('location: login.php');
       }
 
 

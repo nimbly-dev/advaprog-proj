@@ -13,13 +13,6 @@ $sql = "SELECT * FROM product_list";
 // puts it on the result var and connects the sql query to the db
 $result = $conn->query($sql);
 
-
-// Ctr for product
-
-
-// echo print_r($productCtr);
-
-
 //Iterates until there are no more product inputs to be printed
  if ($result->num_rows > 0) {
   // output data of each row
@@ -49,18 +42,18 @@ $result = $conn->query($sql);
            <?php
            echo "<form action='../website/enlarged-product.php' method='POST'>";
            echo "<input type='hidden' name='imgEnlarge' value='{$row['productID']}'>";
-           echo " <input type='submit' class='btn btn-info' name='' value='More Info'>";
+           echo "<input type='submit' class='btn btn-info' name='' value='More Info'>";
            echo "</form>";
             ?>
           <br>
            <?php
            // If sessionID == 1 which is log in then button buy is not disabled
            if(@$_SESSION[@'sessionID'] == 1){
-             echo
              // This code is not final and may see revision depending on circumstances
-             "<a href='../website/checkout.php'>  ".
-              " <button type='button' class='btn btn-success buy'>Buy</button> ".
-              "</a>";
+              echo "<form action='../website/checkout.php' method='POST'>";
+              echo "<input type='hidden' name='buy' value='{$row['productID']}'>";
+              echo "<input type='submit' class='btn btn-success' name='' value='Buy'>";
+              echo "</form>";
            }//Else disble the button
            else {
               echo "<button type='button' class='btn btn-success buy' disabled>Buy</button> ";

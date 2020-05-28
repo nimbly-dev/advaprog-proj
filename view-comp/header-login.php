@@ -20,6 +20,7 @@
 
   <script>
 
+  // Img enlarge on click
   $(document).ready(function(){
       $('.enlarge').click(function(){
            $(this).css('width', function(_ , cur){
@@ -27,6 +28,7 @@
           });
       });
   });
+
   </script>
 
 
