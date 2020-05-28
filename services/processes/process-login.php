@@ -5,10 +5,15 @@
 
  ?>
 <?php
-     session_start();
+   session_start();
   //Initialize variables
   $userName = "";
   $password = "";
+
+
+  $firstName = "";
+  $lastName = "";
+  $middleName = "";
 
   // $userName = mysqli_real_escape_string($conn,$_POST['username']);
   // $password = mysqli_real_escape_string($conn,$_POST['password']);
@@ -16,7 +21,7 @@
   // Error arrays
   $errors = array();
 
-  $_SESSION['sessionID'] = 1;
+  // $_SESSION['sessionID'] = 1;
 
   // If btn-login is clicked
   if(isset($_POST['login'])){
@@ -46,6 +51,10 @@
           $_SESSION['sessionID'] = 1;
           // Calls the username value on table to be used by the website for printing
           $_SESSION['username'] = $userName;
+          // Calls name values on table to be used by the website for printing
+          $_SESSION['firstname'] = $firstName;
+          $_SESSION['lastname'] = $lastName;
+          $_SESSION['middlename'] = $middleName;
           // Redirect to Landing-page
           header ('location: Landing-page.php');
           // echo $userName;

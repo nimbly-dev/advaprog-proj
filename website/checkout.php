@@ -2,7 +2,7 @@
 // include ('../model/Beans/ProductBean.php');
 // include ('../model/Beans/ProductListing.php');
 
-	   session_start();
+	 session_start();
 
 
 	//If sessionID is 1 then user has logged-in
@@ -19,8 +19,8 @@
  <div class="container">
  	<div class="card mt-3">
  		<div class="card-body">
-     <!--  -->
-
+     <!-- PRINTING OF PRODUCT LIST HERE -->
+		 <?php include ('../services/processes/process-checkout.php') ?>
 
 
 
