@@ -52,7 +52,7 @@ $result = $conn->query($sql);
            echo " <input type='submit' class='btn btn-info' name='' value='More Info'>";
            echo "</form>";
             ?>
-
+          <br>
            <?php
            // If sessionID == 1 which is log in then button buy is not disabled
            if(@$_SESSION[@'sessionID'] == 1){

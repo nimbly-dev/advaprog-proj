@@ -29,17 +29,38 @@
 
      <div class="card col-4 mx-5">
        <div class="card-body">
-          <?php echo "<img src='{$row['imgPath']}'>"; ?>
-         <div class="product-title"> <?php  echo " {$row['productName']}  <br> "; ?> </div>
+          <?php
+
+          echo "<img src='{$row['imgPath']}' class='enlarge'>";
+
+          ?>
+          <div class="product-title"> <?php  echo " {$row['productName']}  <br> "; ?> </div>
            <?php echo
-             "Product Price : {$row['productPrice']} <br> ".
+            // Prints product Price
+             "Product Price : {$row['productPrice']} <br> ";
              "Product Description : {$row['productDescription']} <br> "."";
-            if(@$_SESSION[@'sessionID'] == 1){
-              echo " <button type='button' class='btn btn-success buy'>Buy</button> ";
-            }
-            else {
-               echo "<button type='button' class='btn btn-success buy' disabled>Buy</button> ";
-            }
+             ?>
+             <!-- Button for calling the process-productImage-enlarge -->
+             <br>
+             <?php
+             echo "<form action='../website/enlarged-product.php' method='POST'>";
+             echo "<input type='hidden' name='imgEnlarge' value='{$row['productID']}'>";
+             echo " <input type='submit' class='btn btn-info' name='' value='More Info'>";
+             echo "</form>";
+              ?>
+             <br>
+             <?php
+             // If sessionID == 1 which is log in then button buy is not disabled
+             if(@$_SESSION[@'sessionID'] == 1){
+               echo
+               // This code is not final and may see revision depending on circumstances
+               "<a href='../website/checkout.php'>  ".
+                " <button type='button' class='btn btn-success buy'>Buy</button> ".
+                "</a>";
+             }//Else disble the button
+             else {
+                echo "<button type='button' class='btn btn-success buy' disabled>Buy</button> ";
+             }
             ?>
       </div>
      </div>
