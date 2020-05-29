@@ -26,8 +26,12 @@
       //Calls values from the text fields
       $userName = mysqli_real_escape_string($conn,$_POST['username']);
       $email = mysqli_real_escape_string($conn,$_POST['email']);
-      $password = mysqli_real_escape_string($conn,$_POST['password']);
-      $confirmPassword = mysqli_real_escape_string($conn,$_POST['confirmPassword']);
+
+      $password = $_POST['password'];
+      $hashed = password_hash($password, PASSWORD_DEFAULT);
+
+
+      //$confirmPassword = mysqli_real_escape_string($conn,$_POST['confirmPassword']);
       $firstName = mysqli_real_escape_string($conn,$_POST['firstName']);
       $lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
       $middleName = mysqli_real_escape_string($conn,$_POST['middleName']);
@@ -51,8 +55,8 @@
       //If there are no errors then proceed to register process
       if(count($errors) == 0){
         // sql statement for inserting data to the userAccount
-        $sql = "insert into useraccount (username, email, password, firstname, lastname, middlename) VALUES
-        ('$userName','$email','$password','$firstName','$lastName','$middleName')";
+        $sql = "insert into useraccount (username, email, password, firstname, lastname, middlename, unhashed_password) VALUES
+        ('$userName','$email','$hashed','$firstName','$lastName','$middleName','$password')";
 
         // puts on result var and runs the query
         $result = mysqli_query($conn,$sql);

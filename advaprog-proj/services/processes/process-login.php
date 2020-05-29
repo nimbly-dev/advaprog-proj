@@ -9,7 +9,8 @@
   //Initialize variables
   $userName = "";
   $password = "";
-  
+  $hash="";
+
 
 
   // Error arrays
