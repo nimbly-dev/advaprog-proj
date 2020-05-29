@@ -1,0 +1,7 @@
+<div class="dropdown-menu"  aria-labelledby="dropdownMenu1">
+        <a class="dropdown-item">Visa</a>
+        <a class="dropdown-item">Cod</a>
+        <a class="dropdown-item">I owe you</a>
+        <a class="dropdown-item">Credit Card Number</a>
+        <a class="dropdown-item">Foods</a>
+      </div>
