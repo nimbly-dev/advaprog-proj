@@ -7,23 +7,20 @@
 <?php
    session_start();
   //Initialize variables
-
   $userName = "";
   $password = "";
-
-
-//select password from useraccount WHERE unhashed_password = 'aaa';
-
 
   // Error arrays
   $errors = array();
 
 
 
-if(isset($_POST['login']) /*&& password_verify($password, $hashed)*/){
+if(isset($_POST['login'])){
     //Calls values from the text fields
     $userName = mysqli_real_escape_string($conn,$_POST['username']);
     $password = mysqli_real_escape_string($conn,$_POST['password']);
+
+    $passHash = hash('sha512', $password);
     //If empty then push/add it to error array
     if(empty($userName)){
       array_push($errors,"Username is required");
@@ -33,12 +30,12 @@ if(isset($_POST['login']) /*&& password_verify($password, $hashed)*/){
     if(empty($password)){
       array_push($errors,"Password is required");
     }
-    //  $hashed = " SELECT password from useraccount where unhashed_password = 'password' ";
 
     //If there are no errors then proceed to login process
     if(count($errors) == 0) {
       // sql statement for finding matches of username and pasword
-      $sql = "Select * from useraccount WHERE username = '$userName' AND unhashed_password ='$password'";
+      $sql = "Select * from useraccount
+        WHERE username ='$userName' AND password = '$passHash' ";
 
 
 

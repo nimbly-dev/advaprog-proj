@@ -26,9 +26,9 @@
       //Calls values from the text fields
       $userName = mysqli_real_escape_string($conn,$_POST['username']);
       $email = mysqli_real_escape_string($conn,$_POST['email']);
-      
+
       $password = $_POST['password'];
-      $hashed = password_hash($password, PASSWORD_DEFAULT);
+      $hashed = hash('sha512', $password);
 
 
       //$confirmPassword = mysqli_real_escape_string($conn,$_POST['confirmPassword']);
