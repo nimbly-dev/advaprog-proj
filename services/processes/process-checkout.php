@@ -20,7 +20,7 @@
      <select name="paymentMethod">
        <option value="Credit Card">Credit Card</option>
        <option value="COD">COD</option>
-       <option value="I owe you">I owe you</option> 
+       <option value="I owe you">I owe you</option>
 
     <br><br>
     </div>
