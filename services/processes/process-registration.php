@@ -37,8 +37,13 @@
       $lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
       $middleName = mysqli_real_escape_string($conn,$_POST['middleName']);
 
-      $existingUser = "SELECT * FROM useraccount WHERE username = '$userName'";
-      $existingEmail = "SELECT * FROM useraccount WHERE email = '$email'";
+    //  $usedCredentials = "SELECT email, username FROM useraccount WHERE username ='$userName' OR email='$email' ";
+    //  $credentials = $conn->query($usedCredentials);
+
+      $existingUser = "SELECT username FROM useraccount WHERE username = '$userName' ";
+      $existingEmail = "SELECT email FROM useraccount WHERE email = '$email' ";
+      $checkUser = $conn->query($existingUser);
+      $checkEmail = $conn->query($existingEmail);
 
       //If empty $userName then push/add it to error array
       if (empty($userName)){
@@ -55,12 +60,12 @@
        array_push($errors , "Password is requred");
       }
 
-      if($userName = $existingUser){
-        array_push($errors, "Existing username");
+      if($checkUser->num_rows >=1){
+        array_push($errors, "Existing user ");
       }
 
-      if($email = $existingEmail){
-        array_push($errors, "Email is already used");
+      if($checkEmail->num_rows >=1){
+        array_push($errors, "Email is already used ");
       }
 
       //If there are no errors then proceed to register process
