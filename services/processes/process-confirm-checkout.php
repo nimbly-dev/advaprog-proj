@@ -38,8 +38,10 @@ $resultCount =  $result->num_rows;
 <?php } ?>
 <!-- Shipping and payment print -->
 <?php
-  echo "<p>Shipping Address: ".$_SESSION['inputAddress']."</p>";
-  echo "<p>Payment Method: ".$_SESSION['inputPaymentMethod']."</p>";
+  $address = $_POST['addr'];
+  $method = $_POST['paymentMethod'];
+  echo "<p>Shipping Address: ".$address."</p>";
+  echo "<p>Payment Method: ".$method."</p>";
  ?>
 <!-- Buy Button -->
 <?php

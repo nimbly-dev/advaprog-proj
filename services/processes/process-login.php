@@ -5,22 +5,22 @@
 
  ?>
 <?php
-   session_start();
+  session_start();
   //Initialize variables
   $userName = "";
   $password = "";
-  
-
 
   // Error arrays
   $errors = array();
 
 
-  if(isset($_POST['login'])){
+
+if(isset($_POST['login'])){
     //Calls values from the text fields
     $userName = mysqli_real_escape_string($conn,$_POST['username']);
     $password = mysqli_real_escape_string($conn,$_POST['password']);
 
+    $passHash = hash('sha512', $password);
     //If empty then push/add it to error array
     if(empty($userName)){
       array_push($errors,"Username is required");
@@ -32,9 +32,13 @@
     }
 
     //If there are no errors then proceed to login process
-    if(count($errors) == 0){
+    if(count($errors) == 0) {
       // sql statement for finding matches of username and pasword
-      $sql = "Select * from useraccount WHERE username = '$userName' AND password='$password'";
+      $sql = "Select * from useraccount
+        WHERE username ='$userName' AND password = '$passHash' ";
+
+
+
       // puts on result var and runs the query
       $result = mysqli_query($conn,$sql);
         // If return one then a username and password was matched from the useraccount table
@@ -56,6 +60,7 @@
     }
 
   }
+
 
 
 

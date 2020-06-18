@@ -7,25 +7,24 @@
     <!-- Text input box for delivery Address -->
     <div class="form-group">
       <label for="formGroupExampleInput">Delivery Address</label>
-      <input type="text" class="form-control" name="address" placeholder="Enter Address" required>
+      <input type="text" name="addr" class="form-control" name="address" placeholder="Enter Address" required>
     </div>
+
     <!-- Dropdown for Payment Method -->
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle"
+      <!--button class="btn btn-secondary dropdown-toggle"
               type="button"  data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false" name="paymentMethod" required>
        Payment Method
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <a class="dropdown-item" >Visa</a>
-        <a class="dropdown-item" >Cod</a>
-        <a class="dropdown-item" >I owe you</a>
-        <a class="dropdown-item" >Credit Card Number</a>
-        <a class="dropdown-item" >Foods</a>
-      </div>
+     </button-->
+     <select name="paymentMethod">
+       <option value="Credit Card">Credit Card</option>
+       <option value="COD">COD</option>
+       <option value="I owe you">I owe you</option>
+
     <br><br>
     </div>
     <!-- Button for submit -->
-    <input type='submit' class='btn btn-success' name='' value='Submit'>
+    <input type='submit'  class='btn btn-success' name='' value='Submit'>
   </form>
 </div>

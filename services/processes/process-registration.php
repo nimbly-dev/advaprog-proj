@@ -26,12 +26,19 @@
       //Calls values from the text fields
       $userName = mysqli_real_escape_string($conn,$_POST['username']);
       $email = mysqli_real_escape_string($conn,$_POST['email']);
-      $password = mysqli_real_escape_string($conn,$_POST['password']);
-      $confirmPassword = mysqli_real_escape_string($conn,$_POST['confirmPassword']);
+
+      //takes and hashes password
+      $password = $_POST['password'];
+      $hashed = hash('sha512', $password);
+
+
+      //$confirmPassword = mysqli_real_escape_string($conn,$_POST['confirmPassword']);
       $firstName = mysqli_real_escape_string($conn,$_POST['firstName']);
       $lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
       $middleName = mysqli_real_escape_string($conn,$_POST['middleName']);
 
+      $existingUser = "SELECT * FROM useraccount WHERE username = '$userName'";
+      $existingEmail = "SELECT * FROM useraccount WHERE email = '$email'";
 
       //If empty $userName then push/add it to error array
       if (empty($userName)){
@@ -48,11 +55,19 @@
        array_push($errors , "Password is requred");
       }
 
+      if($userName = $existingUser){
+        array_push($errors, "Existing username");
+      }
+
+      if($email = $existingEmail){
+        array_push($errors, "Email is already used");
+      }
+
       //If there are no errors then proceed to register process
       if(count($errors) == 0){
         // sql statement for inserting data to the userAccount
-        $sql = "insert into useraccount (username, email, password, firstname, lastname, middlename) VALUES
-        ('$userName','$email','$password','$firstName','$lastName','$middleName')";
+        $sql = "insert into useraccount (username, email, password, firstname, lastname, middlename, unhashed_password) VALUES
+        ('$userName','$email','$hashed','$firstName','$lastName','$middleName','$password')";
 
         // puts on result var and runs the query
         $result = mysqli_query($conn,$sql);
