@@ -8,3 +8,7 @@ p{
   font-family:  "Times New Roman", Times, serif;;
   font-size: 25px;
 }
+
+#creditcard-form{
+  visibility: hidden;
+}

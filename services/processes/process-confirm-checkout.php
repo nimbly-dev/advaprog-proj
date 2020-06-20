@@ -1,7 +1,6 @@
 <?php
-
-  //
   include ('../services/DB_Operations.php');
+
 ?>
 
 <!-- To be revised depending on circumstances -->
@@ -24,7 +23,7 @@ $resultCount =  $result->num_rows;
 
 
   // Iterate throughout the whole product List
-  for ($ctr = 0; $ctr < $resultCount; $ctr++){
+for ($ctr = 0; $ctr < $resultCount; $ctr++){
     $row = $result -> fetch_assoc();
 ?>
 <div class="container">
@@ -34,12 +33,11 @@ $resultCount =  $result->num_rows;
        <?php echo "Product Price: {$row['productPrice']}"; ?>
      <br><br>
    <?php  } ?>
-
 <?php } ?>
 <!-- Shipping and payment print -->
 <?php
-  $address = $_POST['addr'];
-  $method = $_POST['paymentMethod'];
+  $address = $_SESSION['inputAddress'];
+  $method = $_SESSION['inputPaymentMethod'];
   echo "<p>Shipping Address: ".$address."</p>";
   echo "<p>Payment Method: ".$method."</p>";
  ?>
@@ -49,9 +47,12 @@ $resultCount =  $result->num_rows;
  echo "<button type='submit' class='btn btn-success'>Buy</button>";
  echo "</form>";
  ?>
- <!-- Return Button -->
+ <!-- Cancel/Return Button -->
  <br>
 <?php
+ unset($_SESSION['selectedProductBuy']);
+ unset($_SESSION['inputAddress']);
+ unset($_SESSION['inputPaymentMethod']);
  echo "<a href= '../website/browse.php'>";
  echo "<button type='button' class='btn btn-danger'>Cancel</button>";
  echo "</a>";

@@ -34,7 +34,6 @@
 
 </head>
 <body>
-
 <!-- START OF NAVBAR -->
   <nav class="navbar navbar bg-dark">
       <a class="navbar-brand" href="#" style="color: white;"><b>I-am-speed</b></a>
