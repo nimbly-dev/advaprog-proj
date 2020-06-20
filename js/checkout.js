@@ -1,7 +1,7 @@
 function onSelectCreditCard(){
    var selectionOfPayment = document.getElementById("orderPaymentSelect").value;
    var creditCardForm = document.getElementById("creditcard-form");
-   var checkout = document.getElementById('requestCheckoutButton');
+   var checkout = document.getElementById("requestCheckoutButton");
     if(selectionOfPayment == "Credit Card"){
       creditCardForm.style.visibility = "visible";
     }
@@ -13,14 +13,13 @@ function onSelectCreditCard(){
 function checkIfSelectionIsNull(){
   var checkout = document.getElementById('requestCheckoutButton');
   var selectionOfPayment = document.getElementById("orderPaymentSelect").value;
+
   if(checkPaymentMethod() != true || checkTypeOfCard() != true){
     checkout.disabled = false;
   }
   else {
     checkout.disabled = true;
   }
-
-
 }
 
 function checkPaymentMethod(){

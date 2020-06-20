@@ -1,6 +1,7 @@
 <?php
   include ('../services/DB_Operations.php');
 
+
 ?>
 
 <!-- To be revised depending on circumstances -->
@@ -36,10 +37,13 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
 <?php } ?>
 <!-- Shipping and payment print -->
 <?php
-  $address = $_SESSION['inputAddress'];
-  $method = $_SESSION['inputPaymentMethod'];
-  echo "<p>Shipping Address: ".$address."</p>";
-  echo "<p>Payment Method: ".$method."</p>";
+  echo "<p>Address : ".$_POST['address']."</p>";
+  echo "<p>Payment Method : ".$_POST['orderPaymentSelect']."</p>";
+  if(!empty($_POST['typeOfCard'])){
+    echo "<p>Credit Card: ".$_POST['typeOfCard']."</p>";
+    echo "<p>Credit Card Number: ".$_POST['creditCardNumber']."</p>";
+  }
+
  ?>
 <!-- Buy Button -->
 <?php
@@ -50,9 +54,6 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
  <!-- Cancel/Return Button -->
  <br>
 <?php
- unset($_SESSION['selectedProductBuy']);
- unset($_SESSION['inputAddress']);
- unset($_SESSION['inputPaymentMethod']);
  echo "<a href= '../website/browse.php'>";
  echo "<button type='button' class='btn btn-danger'>Cancel</button>";
  echo "</a>";
