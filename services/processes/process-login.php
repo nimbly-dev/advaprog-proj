@@ -1,15 +1,11 @@
 <?php
-  if ($_SERVER['HTTPS'] != 'on') {
-    header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-    exit;
-  }
+
 ?>
 
 <?php
   // Calls the DB-Operations Class
   include ("../services/DB_Operations.php");
   include ("../services/utilities/log-utility.php");
-
  ?>
 <?php
   session_start();
@@ -53,14 +49,14 @@ if(isset($_POST['login'])){
           $_SESSION['sessionID'] = 1;
           // Calls the username value on table to be used by the website for printing
           $_SESSION['username'] = $userName;
-          $ipAddress = $_SERVER['REMOTE_ADDR'];
-          $message = "User: ".$userName." with IP ADDRESS: ".$ipAddress."";
+          $message = "USER: ".$userName." ";
 
-          logUserLogin($message);
+
+          write_log($message);
+
           // Redirect to Landing-page
           header ('location: ../website/Landing-page.php');
-          // echo $userName;
-          // Write on the log file
+
 
         }else{
           // No username and password matched, pushed to errors array

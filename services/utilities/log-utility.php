@@ -1,25 +1,4 @@
 <?php
-  // require_once('../exceptions/file-not-found-exception.php');
-
-
-  function logUserLogin($message) {
-    $documentRoot = $_SERVER['DOCUMENT_ROOT'];
-    $ipAddress = $_SERVER['REMOTE_ADDR'];
-    error_log(date('H:i, jS F Y').' - '.$ipAddress.' : '.$message.PHP_EOL,
-      3,
-      $documentRoot.'../logFiles/login-logs.log'
-    );
-  }
-
-  function logUserSignup($message) {
-    $documentRoot = $_SERVER['DOCUMENT_ROOT'];
-    $ipAddress = $_SERVER['REMOTE_ADDR'];
-    error_log(date('H:i, jS F Y').' - '.$ipAddress.' : '.$message.PHP_EOL,
-      3,
-      $documentRoot.'../../logFiles/register-logs.log'
-    );
-  }
-
 
   function write_log($message, $logfile='../logFiles/login-logs.log') {
    // Determine log file
@@ -45,17 +24,17 @@
      $remote_addr = "REMOTE_ADDR_UNKNOWN";
    }
 
-   // Get requested script
-   if( ($request_uri = $_SERVER['REQUEST_URI']) == '') {
-     $request_uri = "REQUEST_URI_UNKNOWN";
-   }
+   // // Get requested script
+   // if( ($request_uri = $_SERVER['REQUEST_URI']) == '') {
+   //   $request_uri = "REQUEST_URI_UNKNOWN";
+   // }
 
    // Format the date and time
    $date = date("Y-m-d H:i:s", $time);
 
    // Append to the log file
    if($fd = @fopen($logfile, "a")) {
-     $result = fputcsv($fd, array($date, $remote_addr, $request_uri, $message));
+     $result = fputcsv($fd, array($date, $remote_addr, $message));
      fclose($fd);
 
      if($result > 0)
