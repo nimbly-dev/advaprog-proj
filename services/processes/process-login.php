@@ -1,7 +1,14 @@
 <?php
+  if ($_SERVER['HTTPS'] != 'on') {
+    header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    exit;
+  }
+?>
+
+<?php
   // Calls the DB-Operations Class
   include ("../services/DB_Operations.php");
-
+  include ("../services/utilities/log-utility.php");
 
  ?>
 <?php
@@ -38,7 +45,6 @@ if(isset($_POST['login'])){
         WHERE username ='$userName' AND password = '$passHash' ";
 
 
-
       // puts on result var and runs the query
       $result = mysqli_query($conn,$sql);
         // If return one then a username and password was matched from the useraccount table
@@ -47,11 +53,14 @@ if(isset($_POST['login'])){
           $_SESSION['sessionID'] = 1;
           // Calls the username value on table to be used by the website for printing
           $_SESSION['username'] = $userName;
+          $ipAddress = $_SERVER['REMOTE_ADDR'];
+          $message = "User: ".$userName." with IP ADDRESS: ".$ipAddress."";
 
-
+          logUserLogin($message);
           // Redirect to Landing-page
-          header ('location: Landing-page.php');
+          header ('location: ../website/Landing-page.php');
           // echo $userName;
+          // Write on the log file
 
         }else{
           // No username and password matched, pushed to errors array
