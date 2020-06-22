@@ -52,7 +52,7 @@
              <?php
              // If sessionID == 1 which is log in then button buy is not disabled
              if(@$_SESSION[@'sessionID'] == 1){
-               echo "<form action='../website/checkout.php' method='POST'>";
+               echo "<form action='../website/choosing-payment.php' method='POST'>";
                echo "<input type='hidden' name='buy' value='{$row['productID']}'>";
                echo "<input type='submit' class='btn btn-success' name='' value='Buy'>";
                echo "</form>";

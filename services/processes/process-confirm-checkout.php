@@ -31,24 +31,32 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
    <?php  if($row['productID'] == $_SESSION['selectedProductBuy']){ ?>
        <?php echo "<h2>{$row['productName']}</h2>"; ?>
        <?php echo "<img src='{$row['imgPath']}' class='singleProductImg'>" ;  ?>
-       <?php echo "Product Price: {$row['productPrice']}"; ?>
+       <?php echo "<p>{$row['productPrice']}<p>"; ?>
      <br><br>
    <?php  } ?>
 <?php } ?>
 <!-- Shipping and payment print -->
 <?php
   echo "<p>Address : ".$_POST['address']."</p>";
-  echo "<p>Payment Method : ".$_POST['orderPaymentSelect']."</p>";
-  if(!empty($_POST['typeOfCard'])){
+  if($_POST['payMethod'] == "1"){
+    echo "<p>Payment Method : COD</p>";
+    // ID for transaction is a success
+  }
+  else if($_POST['payMethod'] == "2"){
+    echo "<p>Payment Method : Credit Card</p>";
     echo "<p>Credit Card: ".$_POST['typeOfCard']."</p>";
-    echo "<p>Credit Card Number: ".$_POST['creditCardNumber']."</p>";
+    // ID for transaction is a success
+
+  }else{
+    // ID for transaction failed
   }
 
  ?>
 <!-- Buy Button -->
 <?php
- echo "<form method='POST' action=''>";
+ echo "<form method='POST' action='../website/order-success.php'>";
  echo "<button type='submit' class='btn btn-success'>Buy</button>";
+ echo "<input type='text' hidden name='successID' value='1'> ";
  echo "</form>";
  ?>
  <!-- Cancel/Return Button -->

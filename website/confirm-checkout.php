@@ -18,11 +18,11 @@
  		<div class="card-body">
 			<center>
      <!-- PRINTING OF PRODUCT LIST HERE -->
-		 <?php include ('../services/processes/process-confirm-checkout.php')
+		 <?php include ('../services/processes/process-confirm-checkout.php');
 
       ?>
 
-  
+
 
 
 	   </center>
