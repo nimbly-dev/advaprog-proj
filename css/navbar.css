@@ -1,0 +1,32 @@
+/* NAVBAR */
+/* NAVBAR BRAND */
+#brand_title{
+  color: white;
+  font-size: 25px;
+}
+/* NAVBAR DROPDOWN */
+.dropdown .btn {background: white; color:white;}
+.dropdown .btn:hover {background: #7f8fa6; color:black;}
+.dropdown-menu .dropdown-item {display: inline-block; width: 100%; padding: 10px 5px;}
+
+/* SEARCH */
+.stylish-input-group .input-group-addon{background: white !important;}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+#user{
+  border:0;
+  border-radius: 5px;
+}
+#setPadding{
+   color: #718093;
+   display:inline-block;
+   font-size: 28px;
+   width: 100%;
+   height: auto;
+   text-align: center;
+   vertical-align: bottom;
+}
+#setPadding:hover {border-color: #718093}

@@ -17,10 +17,11 @@ $result = $conn->query($sql);
   // output data of each row
   // Div class for wrap content
   echo "<div class='d-flex flex-xl-wrap'>";
+  echo "<br>";
   while($row = $result->fetch_assoc()) {
     // Here is where a template is created for every item
    ?>
-   <div class="card col-4 mx-5">
+   <div class="card col-4 mx-10">
      <div class="card-body">
         <?php
         echo "<img src='{$row['imgPath']}' class='enlarge'>";
@@ -55,6 +56,7 @@ $result = $conn->query($sql);
           ?>
     </div>
    </div>
+
    <!-- Increment counter to 1 -->
    <?php
   }
