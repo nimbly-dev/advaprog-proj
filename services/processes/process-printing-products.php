@@ -29,7 +29,7 @@ $result = $conn->query($sql);
         <div class="product-title"> <?php  echo " {$row['productName']}  <br> "; ?> </div>
          <?php echo
           // Prints product Price
-           "Product Price : {$row['productPrice']} <br> ";
+           "Product Price : ₱ {$row['productPrice']} <br> ";
            "Product Description : {$row['productDescription']} <br> "."";
            ?>
            <!-- Button for calling the process-productImage-enlarge -->
