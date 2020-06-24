@@ -69,7 +69,11 @@
      <?php
     }
     echo "</div>";
-   }
+  }else{
+    if($result->num_rows == 0){
+      echo "There are no results for your search term<br><br>";
+    }
+  }
    // Return to search page
    // END
    ?>
