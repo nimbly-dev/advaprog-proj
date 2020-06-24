@@ -37,7 +37,7 @@
           <div class="product-title"> <?php  echo " {$row['productName']}  <br> "; ?> </div>
            <?php echo
             // Prints product Price
-             "Product Price : {$row['productPrice']} <br> ";
+             "Product Price : ₱ {$row['productPrice']} <br> ";
              "Product Description : {$row['productDescription']} <br> "."";
              ?>
              <!-- Button for calling the process-productImage-enlarge -->
@@ -52,7 +52,7 @@
              <?php
              // If sessionID == 1 which is log in then button buy is not disabled
              if(@$_SESSION[@'sessionID'] == 1){
-               echo "<form action='../website/checkout.php' method='POST'>";
+               echo "<form action='../website/choosing-payment.php' method='POST'>";
                echo "<input type='hidden' name='buy' value='{$row['productID']}'>";
                echo "<input type='submit' class='btn btn-success' name='' value='Buy'>";
                echo "</form>";
@@ -69,7 +69,11 @@
      <?php
     }
     echo "</div>";
-   }
+  }else{
+    if($result->num_rows == 0){
+      echo "There are no results for your search term<br><br>";
+    }
+  }
    // Return to search page
    // END
    ?>

@@ -23,7 +23,7 @@ else{
 			<?php include('../services/processes/process-search.php'); ?>
 
       <!-- Return Button -->
-      <a href="search.php"><div type="button" class="btn btn-secondary">Go back</div></a>
+      <a href="browse.php"><div type="button" class="btn btn-secondary">Go back</div></a>
 	  </div>
 	</div>
 </div>

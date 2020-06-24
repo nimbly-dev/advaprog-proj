@@ -1,12 +1,6 @@
 <?php
-
-  //
   include ('../services/DB_Operations.php');
 ?>
-
-<!-- To be revised depending on circumstances -->
-
-
 <?php
 //SQL STATEMENT FOR SELECTING ALL INPUTS ON "product_list" table
 $sql = "SELECT * FROM product_list";
@@ -19,37 +13,50 @@ $resultCount =  $result->num_rows;
 // Sets the value of the imgEnlarge depending what prouct was clicked
 
 
-  echo "<p>Hello ".$_SESSION['username']." <br></p>";
-  echo "<p>Your order is as follows</p>";
+echo "<p>Hello ".$_SESSION['username']." <br></p>";
+echo "<p>Your order is as follows</p>";
 
 
   // Iterate throughout the whole product List
-  for ($ctr = 0; $ctr < $resultCount; $ctr++){
+for ($ctr = 0; $ctr < $resultCount; $ctr++){
     $row = $result -> fetch_assoc();
 ?>
 <div class="container">
    <?php  if($row['productID'] == $_SESSION['selectedProductBuy']){ ?>
        <?php echo "<h2>{$row['productName']}</h2>"; ?>
        <?php echo "<img src='{$row['imgPath']}' class='singleProductImg'>" ;  ?>
-       <?php echo "Product Price: {$row['productPrice']}"; ?>
-     <br><br>
-   <?php  } ?>
-
-<?php } ?>
+       <?php echo "<p>₱{$row['productPrice']}<p>"; ?>
+       <?php $overallCost = $_SESSION['qty'] * $row['productPrice']?>
+       <?php echo "<p>Overall Cost: ₱".$overallCost."</p>"; ?>
+  
+   <?php  }
+ }?>
+<?php echo "Quantity: ".$_SESSION['qty']; ?>
 <!-- Shipping and payment print -->
 <?php
-  $address = $_POST['addr'];
-  $method = $_POST['paymentMethod'];
-  echo "<p>Shipping Address: ".$address."</p>";
-  echo "<p>Payment Method: ".$method."</p>";
+  echo "<p>Address : ".$_POST['address']."</p>";
+  if($_POST['payMethod'] == "1"){
+    echo "<p>Payment Method : COD</p>";
+    // ID for transaction is a success
+  }
+  else if($_POST['payMethod'] == "2"){
+    echo "<p>Payment Method : Credit Card</p>";
+    echo "<p>Credit Card: ".$_POST['typeOfCard']."</p>";
+    // ID for transaction is a success
+
+  }else{
+    // ID for transaction failed
+  }
  ?>
 <!-- Buy Button -->
 <?php
- echo "<form method='POST' action=''>";
+ echo "<form method='POST' action='../website/order-success.php'>";
  echo "<button type='submit' class='btn btn-success'>Buy</button>";
+ echo "<input type='text' hidden name='successID' value='1'> ";
+ echo "<input type='text' hidden name='overallCost' value='$overallCost'> ";
  echo "</form>";
  ?>
- <!-- Return Button -->
+ <!-- Cancel/Return Button -->
  <br>
 <?php
  echo "<a href= '../website/browse.php'>";

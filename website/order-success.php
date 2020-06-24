@@ -1,6 +1,5 @@
- <?php
+<?php
 	 session_start();
-
 
 	//If sessionID is 1 then user has logged-in
 	if(@$_SESSION['sessionID'] == 1){
@@ -10,22 +9,13 @@
 	else{
 		require_once("../view-comp/header-logout.php");
 	}
-
  ?>
  <!-- CONTENT HERE -->
  <div class="container">
- 	<div class="card mt-3">
- 		<div class="card-body">
-			<center>
-     <!-- PRINTING OF PRODUCT LIST HERE -->
-		 <?php include ('../services/processes/process-confirm-checkout.php');
-
-      ?>
-
-
-
-
-	   </center>
+   <div class="card mt-3">
+     <div class="card-body">
+       <!-- Printing of Success Page Here-->
+       	<?php include('../services/processes/process-order-success.php'); ?>
     </div>
   </div>
 </div>

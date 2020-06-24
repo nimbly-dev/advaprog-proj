@@ -2,7 +2,7 @@
 <?php
   //
   include ('../services/DB_Operations.php');
-
+  include ("../services/utilities/log-utility.php");
  ?>
  <!-- REGISTER CLASS HERE -->
 <?php
@@ -37,8 +37,7 @@
       $lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
       $middleName = mysqli_real_escape_string($conn,$_POST['middleName']);
 
-    //  $usedCredentials = "SELECT email, username FROM useraccount WHERE username ='$userName' OR email='$email' ";
-    //  $credentials = $conn->query($usedCredentials);
+
 
       $existingUser = "SELECT username FROM useraccount WHERE username = '$userName' ";
       $existingEmail = "SELECT email FROM useraccount WHERE email = '$email' ";
@@ -80,6 +79,11 @@
         $_SESSION['sessionID'] = 1;
         // Calls the username value on table to be used by the website for printing
         $_SESSION['username'] = $userName;
+        $message = "NEW USER: ".$userName." ";
+
+        $logfile='../logFiles/register-logs.log';
+
+        write_log($message,$logfile);
 
         // Redirect to Landing-page
         header('location: login.php');

@@ -7,18 +7,18 @@ body{
   background: #F8F8FF;
 }
 .header{
-  width: 30%;
+  width: 75%;
   margin: 50px auto 0px;
   color: white;
   background: #5F9EA0;
   text-align: center;
   border: 1px solid #B0C4DE;
   border-bottom: none;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 20px 20px 20px 20px;
   padding: 20px;
 }
 form{
-  width: 30%;
+  width: 31%;
   margin: 0px auto;
   padding: 20px;
   border: 1px solid #80C4DE;
