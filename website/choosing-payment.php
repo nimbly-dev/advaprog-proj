@@ -11,22 +11,22 @@
 	}
   require ('../services/utilities/bought-items.php');
  ?>
-
+ <?php $_SESSION['qty'] = $_POST['quantity'];
+ ?>
  <!-- CONTENT HERE -->
  <div class="container">
    <div class="card mt-3">
      <div class="card-body">
 
-
 			 <div class="dropdown">
-			   <button class="btn btn-secondary dropdown-toggle"
+			   <button class="btn btn-secondary dropdown-toggle bg-success"
 			           type="button" id="ChoosePayment" data-toggle="dropdown"
 			           aria-haspopup="true" aria-expanded="false">
 			     Choose Payment
 			   </button>
 			   <div class="dropdown-menu" aria-labelledby="ChoosePayment">
-			     <a class="dropdown-item" href="payment-COD.php">COD</a>
-			     <a class="dropdown-item" href="payment-creditCard.php">Credit Card</a>
+					 <?php echo "<a class='dropdown-item' href='payment-COD.php' >COD</a>"; ?>
+					 <?php echo "<a class='dropdown-item' href='payment-creditCard.php' >Credit Card</a>"; ?>
 			   </div>
 			 </div>
 

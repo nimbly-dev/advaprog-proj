@@ -14,7 +14,6 @@
       // puts it on the result var and connects the sql query to the db
       $result = $conn->query($sql);
 
-
       $resultCount =  $result->num_rows;
       ?>
 
@@ -28,6 +27,7 @@
       <?php  } ?>
       </p>
       <?php } ?>
+      <?php echo "Overall Cost: ₱".$_POST['overallCost']; ?>
 <?php
   } else{?>
   <!-- If order transaction failed -->
@@ -37,7 +37,7 @@
     </div>
 <?php } ?>
 <br><br>
-<a href="../website/Landing-page.php">
+<a href="../website/Landing-page.php" onclick="<?php unset($_SESSION["qty"]) ?>">
  <button type="button" class="btn btn-primary">Return to Homepage</button>
 </a>
 </center>

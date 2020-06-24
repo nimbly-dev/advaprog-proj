@@ -1,8 +1,4 @@
 <?php
-
-?>
-
-<?php
   // Calls the DB-Operations Class
   include ("../services/DB_Operations.php");
   include ("../services/utilities/log-utility.php");
@@ -12,13 +8,10 @@
   //Initialize variables
   $userName = "";
   $password = "";
-
   // Error arrays
   $errors = array();
 
-
-
-if(isset($_POST['login'])){
+  if(isset($_POST['login'])){
     //Calls values from the text fields
     $userName = mysqli_real_escape_string($conn,$_POST['username']);
     $password = mysqli_real_escape_string($conn,$_POST['password']);

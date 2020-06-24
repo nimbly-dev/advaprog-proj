@@ -11,7 +11,6 @@
 	}
 
  ?>
-
 <!-- CONTENT HERE -->
 <div class="container">
 	<div class="card mt-3">

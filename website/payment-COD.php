@@ -10,6 +10,7 @@
 		require_once("../view-comp/header-logout.php");
 	}
  ?>
+ <?php echo "".$_SESSION['qty'] ?>
  <!-- CONTENT HERE -->
  <div class="container">
    <div class="card mt-3">

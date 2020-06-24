@@ -7,7 +7,8 @@
     include ('../services/DB_Operations.php');
 
  ?>
- <form action="../website/confirm-checkout.php" method="POST">
+ <?php echo " <form action='../website/confirm-checkout.php' method='POST'> "; ?>
+ <form action="../website/confirm-checkout.php?" method="POST">
    <!-- Text input box for delivery Address -->
    <div class="form-group">
      <label for="formGroupExampleInput">Delivery Address</label>
