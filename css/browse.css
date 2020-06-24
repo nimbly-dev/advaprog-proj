@@ -1,0 +1,14 @@
+/* Font CSS used on browsing */
+p{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+}
+
+.product-title{
+  font-family:  "Times New Roman", Times, serif;;
+  font-size: 25px;
+}
+
+#creditcard-form{
+  visibility: hidden;
+}

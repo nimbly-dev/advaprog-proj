@@ -1,0 +1,12 @@
+.singleProductImg{
+  width: 259px;
+  height: 194px;
+  border-radius: 8px;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#creditcard-form{
+  visibility: hidden;
+}
