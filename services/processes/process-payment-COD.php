@@ -19,4 +19,5 @@
    <input type="text" hidden value="1" name="payMethod">
    <!-- Button for submit -->
    <input type='submit'  class='btn btn-success' name="requestCheckoutButton" value='Proceed' id="requestCheckoutButton" >
+   <a href="../website/browse.php"> <button type="button" class="btn btn-secondary">Go Back</button> </a>
  </form>

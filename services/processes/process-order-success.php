@@ -22,7 +22,6 @@
       <?php  if($row['productID'] == $_SESSION['selectedProductBuy']){ ?>
           <?php echo "<p>{$row['productName']}<p>"; ?>
           <?php echo "<p>₱{$row['productPrice']}<p>"; ?>
-        
       <?php  } ?>
       </p>
       <?php } ?>
@@ -36,7 +35,7 @@
     </div>
 <?php } ?>
 <br><br>
-<a href="../website/Landing-page.php" onclick="<?php unset($_SESSION["qty"]) ?>">
+<a href="../website/Landing-page.php" onclick="<?php unset($_SESSION["qty"]); unset($_SESSION["selectedProductBuy"])?>">
  <button type="button" class="btn btn-primary">Return to Homepage</button>
 </a>
 </center>
