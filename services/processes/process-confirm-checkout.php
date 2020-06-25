@@ -3,6 +3,14 @@
   include ("../services/utilities/log-utility.php");
 ?>
 <?php
+// Check if Remember address is ticked
+if(isset($_POST['rememberAddress'])){
+  $_SESSION['address'] = $_POST['address'];
+}else{
+  unset($_SESSION['address']);
+}
+ ?>
+<?php
 //SQL STATEMENT FOR SELECTING ALL INPUTS ON "product_list" table
 $sql = "SELECT * FROM product_list";
 // puts it on the result var and connects the sql query to the db
@@ -12,7 +20,6 @@ $result = $conn->query($sql);
 $resultCount =  $result->num_rows;
 
 // Sets the value of the imgEnlarge depending what prouct was clicked
-
 
 echo "<p>Hello ".$_SESSION['username']." <br></p>";
 echo "<p>Your order is as follows</p>";

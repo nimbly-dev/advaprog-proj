@@ -1,4 +1,8 @@
 <?php
+if (@ $_SERVER['HTTPS'] != 'on') {
+ header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+ exit;
+}
   // Calls the DB-Operations Class
   include ("../services/DB_Operations.php");
   include ("../services/utilities/log-utility.php");
@@ -46,7 +50,6 @@
 
 
           write_log($message);
-
           // Redirect to Landing-page
           header ('location: ../website/Landing-page.php');
 

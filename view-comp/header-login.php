@@ -7,7 +7,7 @@
 
 <html>
 <head>
-	<title>Landing Page</title>
+	<title>Trust</title>
 
  <style>
   <?php include '../css/stylesheet.css'; ?>
