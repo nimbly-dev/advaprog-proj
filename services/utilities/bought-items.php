@@ -1,3 +1,3 @@
 <?php
-    $_SESSION['selectedProductBuy'] = $_POST['buy'];
+    @$_SESSION['selectedProductBuy'] = $_POST['buy'];
  ?>

@@ -11,25 +11,31 @@
 	}
   require ('../services/utilities/bought-items.php');
  ?>
- <?php $_SESSION['qty'] = $_POST['quantity'];
+ <?php @$_SESSION['qty'] = $_POST['quantity'];
  ?>
  <!-- CONTENT HERE -->
+ <!-- CHOOSING PAYMENT PAGE -->
  <div class="container">
    <div class="card mt-3">
      <div class="card-body">
-
-			 <div class="dropdown">
-			   <button class="btn btn-secondary dropdown-toggle bg-success"
-			           type="button" id="ChoosePayment" data-toggle="dropdown"
-			           aria-haspopup="true" aria-expanded="false">
-			     Choose Payment
-			   </button>
-			   <div class="dropdown-menu" aria-labelledby="ChoosePayment">
-					 <?php echo "<a class='dropdown-item' href='payment-COD.php' >COD</a>"; ?>
-					 <?php echo "<a class='dropdown-item' href='payment-creditCard.php' >Credit Card</a>"; ?>
-			   </div>
-			 </div>
-
+			 <!-- Check if user is login -->
+			 <?php 	if(@$_SESSION['sessionID'] == 1){ ?>
+							 <div class="dropdown">
+								 <button class="btn btn-secondary dropdown-toggle bg-success"
+												 type="button" id="ChoosePayment" data-toggle="dropdown"
+												 aria-haspopup="true" aria-expanded="false">
+									 Choose Payment
+								 </button>
+								 <div class="dropdown-menu" aria-labelledby="ChoosePayment">
+									 <?php echo "<a class='dropdown-item' href='payment-COD.php' >COD</a>"; ?>
+									 <?php echo "<a class='dropdown-item' href='payment-creditCard.php' >Credit Card</a>"; ?>
+								 </div>
+							 </div>
+				<?php }else{ ?>
+				<?php  echo "<div class='alert alert-danger' role='alert'>";
+							 echo "<strong>Blocked Access</strong> You need to login first before accessing this website.";
+							 echo "</div>";
+							} ?>
     </div>
   </div>
 </div>

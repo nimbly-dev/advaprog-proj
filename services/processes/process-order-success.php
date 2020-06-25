@@ -7,7 +7,6 @@
       <p>Your order is as follows: </p>
       <p>
       <!-- Code for showing the product ordered -->
-
       <?php
       //SQL STATEMENT FOR SELECTING ALL INPUTS ON "product_list" table
       $sql = "SELECT * FROM product_list";
@@ -27,6 +26,7 @@
       <?php  } ?>
       </p>
       <?php } ?>
+      <?php echo "Quantity: ".$_SESSION['qty']."<br>"; ?>
       <?php echo "Overall Cost: ₱".$_POST['overallCost']; ?>
 <?php
   } else{?>

@@ -1,12 +1,6 @@
 <?php
   include ('../services/DB_Operations.php');
-
-
 ?>
-
-<!-- To be revised depending on circumstances -->
-
-
 <?php
 //SQL STATEMENT FOR SELECTING ALL INPUTS ON "product_list" table
 $sql = "SELECT * FROM product_list";
@@ -19,8 +13,8 @@ $resultCount =  $result->num_rows;
 // Sets the value of the imgEnlarge depending what prouct was clicked
 
 
-  echo "<p>Hello ".$_SESSION['username']." <br></p>";
-  echo "<p>Your order is as follows</p>";
+echo "<p>Hello ".$_SESSION['username']." <br></p>";
+echo "<p>Your order is as follows</p>";
 
 
   // Iterate throughout the whole product List
@@ -35,8 +29,9 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
        <?php $overallCost = $_SESSION['qty'] * $row['productPrice']?>
        <?php echo "<p>Overall Cost: ₱".$overallCost."</p>"; ?>
      <br><br>
-   <?php  } ?>
-<?php } ?>
+   <?php  }
+ }?>
+<?php echo "Quantity: ".$_SESSION['qty']; ?>
 <!-- Shipping and payment print -->
 <?php
   echo "<p>Address : ".$_POST['address']."</p>";
