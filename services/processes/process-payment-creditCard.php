@@ -5,7 +5,6 @@
 <?php
     include ('../services/DB_Operations.php');
  ?>
-  <?php echo "".$_SESSION['qty'] ?>
  <form action="../website/confirm-checkout.php" method="POST">
    <!-- Text input box for delivery Address -->
     <div class="form-group">

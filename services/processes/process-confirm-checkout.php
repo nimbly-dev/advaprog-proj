@@ -28,7 +28,7 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
        <?php echo "<p>₱{$row['productPrice']}<p>"; ?>
        <?php $overallCost = $_SESSION['qty'] * $row['productPrice']?>
        <?php echo "<p>Overall Cost: ₱".$overallCost."</p>"; ?>
-     <br><br>
+  
    <?php  }
  }?>
 <?php echo "Quantity: ".$_SESSION['qty']; ?>

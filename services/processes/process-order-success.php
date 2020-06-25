@@ -22,7 +22,7 @@
       <?php  if($row['productID'] == $_SESSION['selectedProductBuy']){ ?>
           <?php echo "<p>{$row['productName']}<p>"; ?>
           <?php echo "<p>₱{$row['productPrice']}<p>"; ?>
-        <br>
+        
       <?php  } ?>
       </p>
       <?php } ?>
@@ -31,7 +31,6 @@
 <?php
   } else{?>
   <!-- If order transaction failed -->
-
     <div>
       <p class="text-danger">Order Transaction Failed</p>
     </div>
