@@ -1,5 +1,6 @@
 <?php
   include ('../services/DB_Operations.php');
+  include ("../services/utilities/log-utility.php");
 ?>
 <?php
 //SQL STATEMENT FOR SELECTING ALL INPUTS ON "product_list" table
@@ -28,7 +29,6 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
        <?php echo "<p>₱{$row['productPrice']}<p>"; ?>
        <?php $overallCost = $_SESSION['qty'] * $row['productPrice']?>
        <?php echo "<p>Overall Cost: ₱".$overallCost."</p>"; ?>
-  
    <?php  }
  }?>
 <?php echo "Quantity: ".$_SESSION['qty']; ?>
@@ -43,7 +43,6 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
     echo "<p>Payment Method : Credit Card</p>";
     echo "<p>Credit Card: ".$_POST['typeOfCard']."</p>";
     // ID for transaction is a success
-
   }else{
     // ID for transaction failed
   }
@@ -54,6 +53,10 @@ for ($ctr = 0; $ctr < $resultCount; $ctr++){
  echo "<button type='submit' class='btn btn-success'>Buy</button>";
  echo "<input type='text' hidden name='successID' value='1'> ";
  echo "<input type='text' hidden name='overallCost' value='$overallCost'> ";
+ // Writes log upon clicking of buy button
+ $message = "USER checkout: ".$_SESSION['username']." with ProductID: ".$_SESSION['selectedProductBuy'];
+ $logfile='../logFiles/confirm-checkout.log';
+ write_log($message,$logfile);
  echo "</form>";
  ?>
  <!-- Cancel/Return Button -->

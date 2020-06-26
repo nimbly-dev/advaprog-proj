@@ -38,7 +38,7 @@
      fclose($fd);
 
      if($result > 0)
-       return array(status => true);
+       return array(@status => true);
      else
        return array(status => false, message => 'Unable to write to '.$logfile.'!');
    }
