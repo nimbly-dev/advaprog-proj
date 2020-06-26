@@ -1,10 +1,8 @@
 <?php
   include ('../services/DB_Operations.php');
  ?>
-
  <!-- START -->
  <?php
-
 //SQL STATEMENT FOR SELECTING ALL INPUTS ON "product_list" table
 $sql = "SELECT * FROM product_list";
 //SQL STATEMENT FOR PRINTING ALL LAPTOPS

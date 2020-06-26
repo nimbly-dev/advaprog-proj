@@ -1,22 +1,10 @@
-
-
-
 <?php
-
-
   include ("../services/DB_Operations.php");
-
   $searchTerm = $_POST['searchTerm'];
-
-
   // Need more revision
   $sql = "SELECT * from product_list WHERE productName LIKE '%".$searchTerm."%' ";
-
-
   $result = mysqli_query($conn,$sql);
   $resultCount = mysqli_num_rows($result);
-
-
   //Iterates until there are no more product inputs to be printed
    if ($result->num_rows > 0) {
     // output data of each row
@@ -26,13 +14,10 @@
     while($row = $result->fetch_assoc()) {
       // Here is where a template is created for every item
      ?>
-
      <div class="card col-4 mx-5">
        <div class="card-body">
           <?php
-
           echo "<img src='{$row['imgPath']}' class='enlarge'>";
-
           ?>
           <div class="product-title"> <?php  echo " {$row['productName']}  <br> "; ?> </div>
            <?php echo
@@ -63,9 +48,7 @@
             ?>
       </div>
      </div>
-
      <!-- Increment counter to 1 -->
-
      <?php
     }
     echo "</div>";

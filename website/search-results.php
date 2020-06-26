@@ -1,7 +1,5 @@
 <?php
-
-
-   session_start();
+ session_start();
 //If sessionID is 1 then user has logged-in
 if(@$_SESSION['sessionID'] == 1){
   require_once("../view-comp/header-login.php");
@@ -10,8 +8,6 @@ if(@$_SESSION['sessionID'] == 1){
 else{
   require_once("../view-comp/header-logout.php");
 }
-
-
  ?>
 <!-- SEARCH RESULT HERE -->
 <!-- CONTENT HERE -->

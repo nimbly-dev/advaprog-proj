@@ -6,8 +6,6 @@
  ?>
  <!-- REGISTER CLASS HERE -->
 <?php
-
-
     //Initialize register values
     $userName = "";
     $email = "";
@@ -31,13 +29,10 @@
       $password = $_POST['password'];
       $hashed = hash('sha512', $password);
 
-
       //$confirmPassword = mysqli_real_escape_string($conn,$_POST['confirmPassword']);
       $firstName = mysqli_real_escape_string($conn,$_POST['firstName']);
       $lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
       $middleName = mysqli_real_escape_string($conn,$_POST['middleName']);
-
-
 
       $existingUser = "SELECT username FROM useraccount WHERE username = '$userName' ";
       $existingEmail = "SELECT email FROM useraccount WHERE email = '$email' ";
@@ -88,11 +83,5 @@
         // Redirect to Landing-page
         header('location: login.php');
       }
-
-
     }
-
-
-
-
  ?>

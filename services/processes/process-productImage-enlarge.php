@@ -1,5 +1,4 @@
 <?php
-
   include('../services/DB_Operations.php');
  ?>
 <?php
