@@ -1,4 +1,9 @@
 <?php
+if (@ $_SERVER['HTTPS'] != 'on') {
+ header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+ exit;
+}  ?>
+<?php
 	 session_start();
 
 	//If sessionID is 1 then user has logged-in
