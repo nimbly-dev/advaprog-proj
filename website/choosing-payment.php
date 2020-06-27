@@ -5,7 +5,6 @@ if (@ $_SERVER['HTTPS'] != 'on') {
 }  ?>
 <?php
 	 session_start();
-
 	//If sessionID is 1 then user has logged-in
 	if(@$_SESSION['sessionID'] == 1){
 		require_once("../view-comp/header-login.php");
@@ -36,11 +35,11 @@ if (@ $_SERVER['HTTPS'] != 'on') {
 									 <?php echo "<a class='dropdown-item' href='payment-creditCard.php' >Credit Card</a>"; ?>
 								 </div>
 							 </div>
-				<?php }else{ ?>
+			<?php }else{ ?>
 				<?php  echo "<div class='alert alert-danger' role='alert'>";
 							 echo "<strong>Blocked Access</strong> You need to login first before accessing this website.";
 							 echo "</div>";
-							} ?>
+						} ?>
     </div>
   </div>
 </div>

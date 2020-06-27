@@ -1,11 +1,9 @@
-
 <script src="../js/checkout.js"/></script>
 <style>
 <?php include '../css/stylesheet.css'; ?>
 </style>
 <?php
     include ('../services/DB_Operations.php');
-
  ?>
 
  <form action="../website/confirm-checkout.php?" method="POST">
