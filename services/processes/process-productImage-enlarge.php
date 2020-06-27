@@ -27,7 +27,7 @@
           <br><br>
           <?php  echo "Product Description: {$row['productDescription']}";       ?>
           <br>
-          <?php echo "Product Price: ₱ {$row['productPrice']}"; ?>
+          <?php echo "Product Price: ₱{$row['productPrice']}"; ?>
           <br><br><br>
 
           <?php
