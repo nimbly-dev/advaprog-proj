@@ -7,3 +7,6 @@
 "2020-06-26 09:19:46",::1,"USER checkout: i_am_speed2 with ProductID: 5"
 "2020-06-26 12:20:26",::1,"USER checkout: i_am_speed2 with ProductID: 5"
 "2020-06-26 12:21:02",::1,"USER checkout: i_am_speed2 with ProductID: 5"
+"2020-06-27 11:25:30",::1,"USER checkout: weewoo2 with ProductID: 3"
+"2020-06-27 11:25:47",::1,"USER checkout: weewoo2 with ProductID: 5"
+"2020-06-27 11:26:39",::1,"USER checkout:  with ProductID: "

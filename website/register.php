@@ -37,11 +37,11 @@ if (@ $_SERVER['HTTPS'] != 'on') {
 							</div>
 							<div class="input-group">
 								<label>Password:</label>
-								<input type="text" name="password" id="password"  placeholder="Enter password"></input>
+								<input type="password" name="password" id="password"  placeholder="Enter password" password></input>
 							</div>
 							<div class="input-group">
 								<label>Confirm Password:</label>
-								<input type="text" name="confirmPassword" id="confirmPassword"  placeholder="Confirm Password"></input>
+								<input type="password" name="confirmPassword" id="confirmPassword"  placeholder="Confirm Password"></input>
 							</div>
 							<div class="input-group">
 								<label>First name:</label>
