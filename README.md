@@ -1,2 +1,2 @@
 # advaprog-proj
-THE GREAT DUO
+A project requirement for our Advance Web Programming Class
